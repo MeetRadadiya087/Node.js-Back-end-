@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            border: 2px solid #000;
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 300px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkred;
+        }
+
+        form input[type="radio"] {
+            margin-left: 10px;
+        }
+
+        form label {
+            margin-left: 10px;
+        }
+        #gender{
+            margin-left: 76px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <h1>CRUD</h1>
+
+    <fieldset>
+        <legend>Server Status</legend>
+
+        <form action="/addData" method="post">
+            <input type="text" placeholder="Enter Your Name" name="name" required><br>
+            <input type="text" placeholder="Enter Your City" name="city" required><br>
+
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="Male" required> Male<br>
+            <input type="radio" name="gender" value="Female" required id="gender"> Female<br>
+            <input type="radio" name="gender" value="Other" required id="gender"> Other<br>
+
+            <input type="email" placeholder="Enter Your Email" name="email" required><br>
+            <button type="submit">Submit</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% students.map((e, i) => { %>
+                    <tr>
+                        <td><%= e.id %></td>
+                        <td><%= e.name %></td>
+                        <td><%= e.age %></td>
+                        <td><%= e.city %></td>
+                        <td><%= e.gender %></td>
+                        <td><%= e.email %></td>
+                        <td>
+                            <a href="/editData?id=<%= e.id %>">
+                                <button>Edit</button>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/deleteData?id=<%= e.id %>">
+                                <button>Delete</button>
+                            </a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+
+    </fieldset>
+
+</body>
+
+</html>
