@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Edit-page </title>
+</head>
+<style>
+    /* General styling for the form */
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Style for each input field */
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    /* Button styling */
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Votes</th>
+                <th>Stars</th>
+                <th>Genre</th>
+                <th>Language</th>
+                <th>Duration</th>
+                <th>Release Date</th>
+                <th>About Movie</th>
+                <th>Cover Image</th>
+                <th>Poster Image</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+            <% movies.map(() => { %>
+                <tr>
+                    <!-- Movie Title -->
+                    <td><%= movie.title %></td>
+                    
+                    <!-- Movie Votes -->
+                    <td><%= movie.votes %></td>
+                    
+                    <!-- Movie Stars -->
+                    <td><%= movie.stars %></td>
+                    
+                    <!-- Movie Genre -->
+                    <td><%= movie.genre %></td>
+                    
+                    <!-- Movie Language -->
+                    <td><%= movie.language %></td>
+                    
+                    <!-- Movie Duration -->
+                    <td><%= movie.duration %></td>
+                    
+                    <!-- Movie Release Date -->
+                    <td><%= movie.releaseDate %></td>
+                    
+                    <!-- About Movie -->
+                    <td><%= movie.about %></td>
+                    
+                    <!-- Cover Image -->
+                    <td><img src="<%= movie.coverImage %>" alt="Cover Image" style="max-width: 100px; height: auto;"></td>
+                    
+                    <!-- Poster Image -->
+                    <td><img src="<%= movie.posterImage %>" alt="Poster Image" style="max-width: 100px; height: auto;"></td>
+    
+                    <!-- Edit Button -->
+                    <td>
+                        <a href="/editData?id=<%= movie.id %>">
+                            <button>Edit</button>
+                        </a>
+                    </td>
+    
+                    <!-- Delete Button -->
+                    <td>
+                        <a href="/deleteData?id=<%= movie.id %>">
+                            <button>Delete</button>
+                        </a>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    
+
+
+</body>
+
+</html>

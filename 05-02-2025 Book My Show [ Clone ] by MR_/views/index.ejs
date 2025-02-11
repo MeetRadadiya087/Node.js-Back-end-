@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Add Movie </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar container */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        legend {
+            font-size: 1.4em;
+            color: #555;
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="file"],
+        textarea {
+            padding: 12px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            background-color: #fafafa;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            background-color: #6c757d;
+            color: white;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #5a6268;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 30px;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f8f9fa;
+        }
+
+        td img {
+            border-radius: 5px;
+            width: 130px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        td a button {
+            margin: 5px;
+            padding: 6px 12px;
+            font-size: 0.9em;
+            border-radius: 4px;
+        }
+
+        td a button:first-child {
+            background-color: #28a745;
+            color: white;
+        }
+
+        td a button:first-child:hover {
+            background-color: #218838;
+        }
+
+        td a button:last-child {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        td a button:last-child:hover {
+            background-color: #c82333;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        .navbar {
+            width: 100%;
+            height: 100px;
+            background-color: white;
+            /* White background */
+            box-sizing: border-box;
+            /* Ensure padding and borders are included in the width and height */
+        }
+
+        .navbar nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            padding: 0 20px;
+            /* Adjust padding as needed */
+        }
+
+        .navbar .left-div {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            max-height: 60px;
+            /* Adjust logo height */
+        }
+
+        .navbar .form .input {
+            padding: 10px;
+            margin-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .navbar-bottom {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #f5f5f5;
+            /* Slightly off-white for bottom navbar */
+        }
+
+        .navbar-bottom div a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            /* Text color */
+            font-weight: bold;
+        }
+
+        .navbar-bottom div a:hover {
+            color: #007bff;
+            /* Hover effect color */
+        }
+
+        button {
+            background-color: #007bff;
+            /* Button color */
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            /* Darker blue on hover */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <nav>
+            <div class="left-div">
+                <a href="/" class="logo">
+                    <img alt="Logo"
+                        src=" https://upload.wikimedia.org/wikipedia/commons/7/75/Bookmyshow-logoid.png   " />
+                </a>
+                <form class="form">
+                    <input aria-label="Search" placeholder="Search for Movies, Events, Plays, Sports, and Activities"
+                        type="search" class="input" />
+                </form>
+            </div>
+            <div>
+                <a href="/form"><button>Add Movie</button></a>
+                <button>
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div class="navbar-bottom">
+            <div>
+                <a href="#">Movies</a>
+                <a href="#">Stream</a>
+                <a href="#">Events</a>
+                <a href="#">Plays</a>
+                <a href="#">Sports</a>
+                <a href="#">Activities</a>
+            </div>
+            <div>
+                <a href="#">ListYourShow</a>
+                <a href="#">Corporates</a>
+                <a href="#">Offers</a>
+                <a href="#">Gift Cards</a>
+            </div>
+        </div>
+
+    </div>
+
+    <fieldset>
+        <center>
+            <legend>
+                <h1>ADD MOVIE</h1>
+            </legend>
+        </center>
+        
+        <!-- Add Movie Form -->
+        <form action="/" method="post" enctype="multipart/form-data">
+            <div>
+                <label>Title</label>
+                <input type="text" name="title" placeholder="Enter movie title" required>
+            </div>
+            <div>
+                <label>Votes</label>
+                <input type="number" name="votes" placeholder="Enter number of votes" min="0" required>
+            </div>
+            <div>
+                <label>Star Rating</label>
+                <input type="number" name="star" placeholder="Enter star rating (0-5)" min="0" max="5" required>
+            </div>
+            <div>
+                <label>Genre</label>
+                <input type="text" name="genre" placeholder="Enter movie genre" required>
+            </div>
+            <div>
+                <label for="language">Language</label>
+                <input type="text" name="language" placeholder="Enter movie language" required>
+            </div>
+            <div>
+                <label for="duration">Duration</label>
+                <input type="text" name="duration" placeholder="Enter movie duration (e.g., 2h 30m)" required>
+            </div>
+            <div>
+                <label for="releaseDate">Release Date</label>
+                <input type="date" name="releaseDate" required>
+            </div>
+            <div>
+                <label>About Movie</label>
+                <textarea name="about" rows="3" placeholder="Enter movie description" required></textarea>
+            </div>
+            <div>
+                <label for="coverImg">Cover Image</label>
+                <input type="file" name="coverImg" accept=".jpg, .jpeg, .png" required>
+            </div>
+            <div>
+                <label for="poster">Poster Image</label>
+                <input type="file" name="poster" accept=".jpg, .jpeg, .png" required>
+            </div>
+            <a href="https://www.district.in/">
+                <button type="submit" url="https://www.district.in/">Submit</button>
+            </a>
+        </form>
+        
+        <!-- Movie Data Table -->
+        <!-- <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Votes</th>
+                    <th>Stars</th>
+                    <th>Genre</th>
+                    <th>Language</th>
+                    <th>Duration</th>
+                    <th>Release Date</th>
+                    <th>About Movie</th>
+                    <th>Cover Image</th>
+                    <th>Poster Image</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% movies.map(function(movie) { %>
+                    <tr>
+                        <td><%= movie.title %></td>
+                        <td><%= movie.votes %></td>
+                        <td><%= movie.stars %></td>
+                        <td><%= movie.genre %></td>
+                        <td><%= movie.language %></td>
+                        <td><%= movie.duration %></td>
+                        <td><%= movie.releaseDate %></td>
+                        <td><%= movie.about %></td>
+                        <td><%= movie.coverImg %></td>
+                        <td><%= movie.poster %></td>
+                        <td><img src="<%= movie.coverImage %>" alt="Cover Image" style="max-width: 100px; height: auto;"></td>
+                        <td><img src="<%= movie.posterImage %>" alt="Poster Image" style="max-width: 100px; height: auto;"></td>
+                        
+                    </tr>
+                <% }); %>
+            </tbody>
+            
+            
+        </table> -->
+        
+
+
+    </fieldset>
+
+</body>
+
+</html>
